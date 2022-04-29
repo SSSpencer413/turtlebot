@@ -1,7 +1,7 @@
 //SSSpencer413
 
-const Discord = require('discord.js');
-const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_MEMBERS']});;
+const { Client, Intents } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS]});;
 
 client.on("ready", () => {
     console.log("ready!");
