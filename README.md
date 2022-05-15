@@ -8,7 +8,7 @@ Credit to [Turtlepla](https://discordapp.com/users/418230724361977856) for the i
 -
 
 [Guilded Invite](https://www.guilded.gg/b/a3a8b6d6-8e6a-4098-819e-92f3467f25f6)
-
+-
 
 Commands:
 --
