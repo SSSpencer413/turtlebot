@@ -37,8 +37,8 @@ exports.run = async (client, message, args) => {
                     }
                 }
 
-                embed.description = cmdName;
-
+                embed.title = cmdName;
+                embed.description = command.commandData.description;
 
 
             } 
