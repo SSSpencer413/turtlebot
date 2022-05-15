@@ -53,3 +53,9 @@ exports.run = async () => {
 }
 
 
+exports.stats = function() {
+    return {
+        uptime: client.uptime,
+        servers: client.guilds.cache.size
+    };
+}

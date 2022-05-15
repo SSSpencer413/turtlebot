@@ -2,8 +2,9 @@ const { Client } = require("guilded.js");
 const fs = require("fs");
 const commandFiles = fs.readdirSync('./guilded/commands').filter(file => file.endsWith('.js'));
 
+const client = new Client({ token: process.env.GUILDEDTOKEN });
+
 exports.run = async () => {
-    const client = new Client({ token: process.env.GUILDEDTOKEN });
     
     client.on("ready", () => {
         console.log("Guilded ready!");
@@ -23,7 +24,12 @@ exports.run = async () => {
             } 
         }
     });
+
     client.login();
+}
 
-
+exports.stats = function() {
+    return {
+        uptime: client.uptime
+    };
 }
