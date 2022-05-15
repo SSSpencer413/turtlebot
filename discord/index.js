@@ -49,8 +49,6 @@ exports.run = async () => {
         }
     });
     
-    process.env.DISCORDTOKEN = "ODk0MzM1OTk0MjQzOTk3NzM3.GpzgzE.absP4LRaGmiV7kKvCujNzftUWRPE5oCLofNJmA";
-    
     client.login(process.env.DISCORDTOKEN);
 }
 
