@@ -11,7 +11,7 @@ exports.run = async (Client, interaction) => {
             footer: {
                 text: "Source: " + fact[1],
             },
-            title: "Turtle fact:",
+            title: "Turtle Fact",
             description: fact[0],
             color: 0x2ECC71 
         }

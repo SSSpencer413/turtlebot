@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
             text: "Official Server: https://guilded.gg/i/kJOQ7DRp",
 
         },
-        title: "TurtleBot Help",
+        title: "Commands",
         color: 0x2ECC71, 
         fields: []
     }
