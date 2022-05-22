@@ -49,6 +49,26 @@ exports.run = async () => {
         }
     });
     
+    client.on("guildCreate", (guild) =>{
+        let createdCommands = [];
+            
+        guild.commands.fetch().then((command) => {
+            if (command.applicationId == client.application.id && commandFiles.includes(command.name)) {
+                createdCommands.push(command.name + ".js");
+            } else if (command.applicationId == client.application.id) {
+                command.delete();
+            }
+        }).catch(console.error);
+
+        for (let file of commandFiles) {
+            let command = require(`./commands/${file}`);
+
+            if (command.commandData && !createdCommands.includes(file)) {
+                guild.commands.create(command.commandData);
+            }
+        }
+    });
+
     client.login(process.env.DISCORDTOKEN);
 }
 
