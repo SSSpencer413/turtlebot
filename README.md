@@ -12,5 +12,6 @@ Credit to [Turtlepla](https://discordapp.com/users/418230724361977856) for the i
 
 Commands:
 --
-`/turtlepic` -- Sends a random picture of a turtle.
-`/turtlefact` -- Sends a random fact about turtles.
+`/turtlepic` -- Sends a random picture of a turtle.<br>
+`/turtlefact` -- Sends a random fact about turtles.<br>
+(Guilded Only) `/turtlehelp` -- Sends a list of commands and how to use them.
