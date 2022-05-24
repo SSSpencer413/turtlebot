@@ -1,6 +1,6 @@
 const { Client } = require("guilded.js");
 const fs = require("fs");
-const commandFiles = fs.readdirSync('./guilded/commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync(__dirname + '/commands').filter(file => file.endsWith('.js'));
 
 const client = new Client({ token: process.env.GUILDEDTOKEN });
 

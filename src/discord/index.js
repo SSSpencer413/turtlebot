@@ -4,7 +4,7 @@ const fs = require("fs");
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS]});
 
-const commandFiles = fs.readdirSync('./discord/commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync(__dirname + '/commands').filter(file => file.endsWith('.js'));
 
 exports.run = async () => {
     client.on("ready", () => {
