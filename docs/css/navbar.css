@@ -1,0 +1,51 @@
+/* Nav bar */
+
+/* The nav bar parent is a flexbox that justifies content to the end, aligning things to center */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #0091A5;
+    padding: 1vh 2vw ;
+}
+
+/* There's an unordered list that contains everything but the logo, we remove its bullets */
+nav ul {
+    list-style-type: none;
+}
+
+/* Each list item is an inline block, with some padding between them */
+nav li {
+    display: inline-block;
+    padding: 0 1vw;
+}
+
+/* Each link inside the navbar is white, and has no text decor */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25em;
+} 
+
+/* Add some fancy hover effects */
+nav li a:hover {
+    color: #B8D34D;
+    transition: color 0.3s ease 0s;
+}
+
+/* For some reason this moves it to the right lol */
+#logo {
+    margin-right: auto;
+}
+
+/* Hide all navbar span elements if the screen is small */
+@media screen and (max-width: 700px) {
+    nav span {
+        display: none;
+    }
+
+    nav li {
+        display: block;
+        text-align: right;
+    }
+}
