@@ -16,7 +16,7 @@ exports.run = async () => {
             let commandName = args.shift();
             try {
                 if (commandFiles.includes(`${commandName}.js`)) {
-                    let command = require(`./commands/${commandName}.js`);
+                    let command = require(__dirname + `/commands/${commandName}.js`);
                     command.run(client, message, args);
                 }
             } catch (err) {
