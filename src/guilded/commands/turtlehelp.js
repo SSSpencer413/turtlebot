@@ -1,5 +1,5 @@
 const fs = require("fs");
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync(__dirname + '/commands').filter(file => file.endsWith('.js'));
 const { Embed } = require("guilded.js");
 
 exports.run = async (client, message, args) => {
