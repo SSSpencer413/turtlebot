@@ -4,10 +4,10 @@ const { SlashCommandBuilder, ApplicationIntegrationType, InteractionContextType 
 var Facts = require("../../shared/turtlefacts.json");
 
 exports.run = async (Client, interaction) => {
-    await interaction.defer();
+    await interaction.deferReply();
     let fact = Facts[Math.floor(Math.random() * Facts.length)];
 
-    interaction.reply({embeds: [
+    interaction.editReply({embeds: [
         {
             footer: {
                 text: "Source: " + fact[1],

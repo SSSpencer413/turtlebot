@@ -4,7 +4,7 @@ const { SlashCommandBuilder, ApplicationIntegrationType, InteractionContextType 
 const https = require("https");
 
 exports.run = async (Client, interaction) => {
-    await interaction.defer();
+    await interaction.deferReply();
 
     /* https.get("https://source.unsplash.com/featured/?turtle", (res) => {
         interaction.reply({embeds: [
@@ -29,7 +29,7 @@ exports.run = async (Client, interaction) => {
     "https://images.unsplash.com/photo-1580603474920-aa3332b2c40f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8dHVydGxlfHx8fHx8MTY1MjYzNzQ4OQ&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
   ];
 
-interaction.reply({embeds: [
+interaction.editReply({embeds: [
             {
                 image: {
                     url: turtles[Math.floor(Math.random() * (turtles.length))]
