@@ -1,5 +1,6 @@
 //SSSpencer413
 
+const { SlashCommandBuilder, ApplicationIntegrationType, InteractionContextType } = require("discord.js");
 var Facts = require("../../shared/turtlefacts.json");
 
 exports.run = async (Client, interaction) => {
@@ -18,8 +19,8 @@ exports.run = async (Client, interaction) => {
     ]});
 };
 
-exports.commandData = {
-    name: 'turtlefact',
-    description: 'random turtle fact',
-    defaultPermission: true
-};
+exports.data = new SlashCommandBuilder()
+    .setName('turtlefact')
+    .setDescription('Get a random fact about turtles')
+    .setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+    .setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel]);

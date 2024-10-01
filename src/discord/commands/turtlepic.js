@@ -1,5 +1,6 @@
 //SSSpencer413
 
+const { SlashCommandBuilder, ApplicationIntegrationType, InteractionContextType } = require("discord.js");
 const https = require("https");
 
 exports.run = async (Client, interaction) => {
@@ -42,8 +43,8 @@ interaction.reply({embeds: [
         ]});
 };
 
-exports.commandData = {
-    name: 'turtlepic',
-    description: 'random turtle pic',
-    defaultPermission: true
-};
+exports.data = new SlashCommandBuilder()
+    .setName('turtlepic')
+    .setDescription('Get a random picture of a turtle')
+    .setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+	.setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel]);

@@ -2,11 +2,18 @@
 
 /* The nav bar parent is a flexbox that justifies content to the end, aligning things to center */
 nav {
+    --header-color: #0091A5;
+    --header-text-color: white;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: #0091A5;
-    padding: 1vh 2vw ;
+    background-color: var(--header-color);
+    padding: 0.5rem 1rem;
+
+    /* Keep navbar sticky at the top */
+    position: sticky;
+    top: 0;
 }
 
 /* There's an unordered list that contains everything but the logo, we remove its bullets */
@@ -17,35 +24,42 @@ nav ul {
 /* Each list item is an inline block, with some padding between them */
 nav li {
     display: inline-block;
-    padding: 0 1vw;
+    padding: 0.5rem 1rem;
 }
 
 /* Each link inside the navbar is white, and has no text decor */
 nav a {
-    color: white;
+    color: var(--header-text-color);
     text-decoration: none;
-    font-size: 1.25em;
+    font-size: 1.25rem;
 } 
 
 /* Add some fancy hover effects */
 nav li a:hover {
-    color: #B8D34D;
+    color: var(--accent-color);
     transition: color 0.3s ease 0s;
 }
 
-/* For some reason this moves it to the right lol */
+/* For some reason this moves it to the left lol */
 #logo {
     margin-right: auto;
 }
 
 /* Hide all navbar span elements if the screen is small */
-@media screen and (max-width: 700px) {
-    nav span {
+@media screen and (max-width: 735px) {
+    nav li {
         display: none;
+        text-align: right;
     }
 
-    nav li {
+    nav #invite {
         display: block;
-        text-align: right;
+    }
+}
+
+/* Edge case: Hide Invite if screen is WAYYY too small */
+@media screen and (max-width: 325px) {
+    nav #invite span {
+        display: none;
     }
 }
