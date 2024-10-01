@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.sendStatus(200);
 })
 
+app.get('/redirect', (req, res) => {
+    res.redirect('https://ssspencer413.github.io/turtlebot/');
+})
+
 app.get('/discord', (req, res) => {
     res.status(200).send(discord.stats());
 })
